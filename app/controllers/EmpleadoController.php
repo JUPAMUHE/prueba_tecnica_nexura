@@ -37,8 +37,8 @@ class EmpleadoController {
 
             $errors = [];
    
-            if (empty($this->empleadoModel->nombre) || !preg_match('/^[\p{L}\s]{2,}$/u', $this->empleadoModel->nombre)) {
-                $errors[] = 'Nombre inválido. Debe tener al menos 2 caracteres y solo letras.';
+            if (empty($this->empleadoModel->nombre) || !preg_match('/^[\p{L}\s]{5,}$/u', $this->empleadoModel->nombre)) {
+                $errors[] = 'Nombre inválido. Debe tener al menos 5 caracteres y solo letras.';
             }
 
             if (empty($this->empleadoModel->email) || !filter_var($this->empleadoModel->email, FILTER_VALIDATE_EMAIL)) {

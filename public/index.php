@@ -1,13 +1,9 @@
 
 <?php
-    // Cargar la configuración
     require_once '../config/config.php';
-
-    // Cargar el controlador
     require_once '../app/controllers/EmpleadoController.php';
 
     //obtener la acción de la ruta
-    
     $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
     // Instanciar el controlador

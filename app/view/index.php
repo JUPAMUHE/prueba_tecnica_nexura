@@ -67,9 +67,9 @@
                         <tr>
                             <td><?php echo htmlspecialchars($empleado['nombre'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php echo htmlspecialchars($empleado['email'], ENT_QUOTES, 'UTF-8'); ?></td>
-                            <td class="text-center"><?php echo htmlspecialchars($empleado['sexo'], ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td class="text-center"><?php echo htmlspecialchars($empleado['sexo'] == 'M' ? 'Masculino' : 'Femenino', ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php echo htmlspecialchars($empleado['area_name'], ENT_QUOTES, 'UTF-8'); ?></td>
-                            <td class="text-center"> <?php echo htmlspecialchars($empleado['boletin'] == 1 ? 'SI' : 'NO', ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td class="text-center"> <?php echo htmlspecialchars($empleado['boletin'] == 1 ? 'Si' : 'No', ENT_QUOTES, 'UTF-8'); ?></td>
                             <td class="text-center"><i class="fa-solid fa-pen-to-square edit" data-id="<?php echo htmlspecialchars($empleado['id'], ENT_QUOTES, 'UTF-8'); ?>"></i></td>
                             <td class="text-center"><i class="fa-solid fa-trash delete" data-id="<?php echo htmlspecialchars($empleado['id'], ENT_QUOTES, 'UTF-8'); ?>"></i></td>
                         </tr>
@@ -80,14 +80,16 @@
     </div>
     <!-- Modal -->
     <div class="modal fade" id="crearEmpleadoModal" tabindex="-1" aria-labelledby="crearEmpleadoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="crearEmpleadoModalLabel">Crear Empleado</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                     
+                    <div class="alert alert-primary" role="alert">
+                        <p class="mb-0">Los campos con asteriscos (*) son obligatorios</p>
+                    </div>  
                     <div class="alert alert-danger errors" role="alert" style="display:none;">
                         
                     </div>
